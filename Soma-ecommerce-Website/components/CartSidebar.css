@@ -1,0 +1,299 @@
+/* components/CartSidebar.css */
+.cart-sidebar-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 50;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.cart-sidebar-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: clamp(320px, 100vw, 450px);
+  height: 100%;
+  background: white;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  padding: 5em 1.5em 2em 1.5em;
+  overflow-y: auto;
+  z-index: 10;
+  pointer-events: auto;
+  box-shadow: -4px 0 20px rgba(0,0,0,0.05);
+}
+
+.cs-prelayers {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: clamp(320px, 100vw, 450px);
+  pointer-events: none;
+  z-index: 5;
+}
+
+.cs-prelayer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  transform: translateX(100%);
+}
+
+.cs-panel-inner {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cs-close-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: transparent;
+  border: none;
+  font-size: 2.2rem;
+  color: #6b7280;
+  cursor: pointer;
+  line-height: 1;
+  transition: transform 0.2s, color 0.2s;
+  z-index: 20;
+}
+
+.cs-close-btn:hover {
+  transform: scale(1.1);
+  color: #111;
+}
+
+.cs-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #111;
+}
+
+/* Empty State */
+.cs-empty-state {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #6b7280;
+}
+
+.cs-empty-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.cs-empty-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+/* Cart Items */
+.cs-item-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.cs-item {
+  display: flex;
+  gap: 1rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.cs-item-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  background: #f9fafb;
+}
+
+.cs-item-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cs-item-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.2;
+}
+
+.cs-item-price {
+  font-weight: 700;
+  color: #059669; /* green */
+}
+
+.cs-item-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.cs-qty-control {
+  display: flex;
+  align-items: center;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.cs-qty-btn {
+  background: #f9fafb;
+  border: none;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #374151;
+  transition: background 0.2s;
+}
+
+.cs-qty-btn:hover {
+  background: #e5e7eb;
+}
+
+.cs-qty-value {
+  width: 32px;
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.cs-remove-btn {
+  background: transparent;
+  border: none;
+  color: #ef4444;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+
+.cs-remove-btn:hover {
+  background: #fee2e2;
+}
+
+/* Coupon */
+.cs-coupon-section {
+  margin-top: 2rem;
+  border-top: 1px dashed #e5e7eb;
+  padding-top: 1.5rem;
+}
+
+.cs-coupon-input-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.cs-coupon-input {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  outline: none;
+}
+
+.cs-coupon-input:focus {
+  border-color: #5227ff;
+}
+
+.cs-coupon-btn {
+  padding: 0 1rem;
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.cs-coupon-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.cs-coupon-message {
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+}
+.cs-coupon-message.error { color: #ef4444; }
+.cs-coupon-message.success { color: #059669; display: flex; align-items: center; justify-content: space-between; }
+.cs-coupon-remove { background: transparent; border: none; color: #ef4444; cursor: pointer; text-decoration: underline; }
+
+/* Summary */
+.cs-summary {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.cs-summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  color: #4b5563;
+}
+
+.cs-summary-row.total {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.cs-checkout-btn {
+  margin-top: 1.5rem;
+  width: 100%;
+  padding: 1rem;
+  background: #ff5e14; /* Using the theme orange/accent */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s;
+  text-align: center;
+}
+
+.cs-checkout-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}

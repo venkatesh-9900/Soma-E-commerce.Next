@@ -1,0 +1,323 @@
+/* ============================================
+   AUTH PAGES - Scoped Vanilla CSS
+   Matches the design reference exactly
+   ============================================ */
+
+/* Overlay / Backdrop */
+.auth-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9fafb;
+  overflow: hidden;
+  font-family: "Jost", sans-serif;
+}
+
+/* Card */
+.auth-card {
+  width: 100%;
+  max-width: 480px;
+  background: #ffffff;
+  border-radius: 32px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+@media (max-width: 640px) {
+  .auth-overlay {
+    background: #ffffff;
+    align-items: flex-start;
+  }
+  .auth-card {
+    max-width: 100%;
+    height: 100dvh;
+    max-height: 100dvh;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 48px 24px 32px;
+    overflow-y: auto;
+  }
+}
+
+/* Back Button */
+.auth-back-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  cursor: pointer;
+  margin-bottom: 24px;
+  transition: background 0.2s ease;
+  flex-shrink: 0;
+}
+.auth-back-btn:hover { background: #f9fafb; }
+
+/* Headings */
+.auth-title {
+  font-size: 30px;
+  font-weight: 700;
+  color: #1a1c29;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+  margin: 0 0 8px 0;
+  padding-right: 16px;
+}
+
+.auth-subtitle {
+  font-size: 15px;
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0 0 32px 0;
+}
+
+/* Form */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+}
+
+.auth-inputs-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+/* Input wrapper */
+.auth-input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.auth-input {
+  width: 100%;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 16px 16px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #111827;
+  font-family: "Jost", sans-serif;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
+.auth-input::placeholder { color: #9ca3af; }
+.auth-input:focus {
+  border-color: #d1d5db;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.04);
+}
+.auth-input.has-icon { padding-right: 48px; }
+
+/* Eye toggle */
+.auth-eye-btn {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: #9ca3af;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+}
+.auth-eye-btn:hover { color: #6b7280; }
+
+/* Forgot Password link */
+.auth-forgot-link-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+.auth-forgot-link {
+  font-size: 13px;
+  font-weight: 500;
+  color: #6b7280;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.auth-forgot-link:hover { color: #111827; }
+
+/* Primary button */
+.auth-btn {
+  width: 100%;
+  background: #1c1f2e;
+  color: #ffffff;
+  border: none;
+  border-radius: 14px;
+  padding: 16px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: "Jost", sans-serif;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background 0.2s, transform 0.1s;
+  margin-top: 32px;
+}
+.auth-btn:hover { background: #0f1117; }
+.auth-btn:active { transform: scale(0.99); }
+.auth-btn:disabled { opacity: 0.7; cursor: not-allowed; }
+
+/* Divider */
+.auth-divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 32px 0;
+}
+.auth-divider-line {
+  flex: 1;
+  height: 1px;
+  background: #e5e7eb;
+}
+.auth-divider-text {
+  font-size: 13px;
+  font-weight: 500;
+  color: #9ca3af;
+  white-space: nowrap;
+}
+
+/* Google Button */
+.auth-google-row {
+  display: flex;
+  justify-content: center;
+}
+.auth-google-btn {
+  width: 105px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.auth-google-btn:hover { background: #f9fafb; }
+
+/* Bottom register/login link */
+.auth-bottom-link {
+  text-align: center;
+  margin-top: auto;
+  padding-top: 32px;
+  padding-bottom: 8px;
+  font-size: 14px;
+  color: #4b5563;
+  font-weight: 500;
+}
+.auth-bottom-link a {
+  color: #38c4c4;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.auth-bottom-link a:hover { color: #289999; }
+
+/* Error message */
+.auth-error {
+  color: #ef4444;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  margin: 8px 0;
+}
+
+/* ---- OTP Input ---- */
+.auth-otp-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin: 24px 0 32px;
+}
+.auth-otp-cell {
+  flex: 1;
+  height: 64px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  color: #111827;
+  font-family: "Jost", sans-serif;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
+.auth-otp-cell:focus {
+  border-color: #d1d5db;
+  box-shadow: 0 0 0 3px rgba(0,0,0,0.04);
+}
+
+/* Resend row */
+.auth-resend-row {
+  text-align: center;
+  padding-top: 24px;
+  padding-bottom: 4px;
+  font-size: 15px;
+  color: #6b7280;
+  font-weight: 500;
+}
+.auth-resend-btn {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin-left: 4px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #38c4c4;
+  cursor: pointer;
+  font-family: "Jost", sans-serif;
+  transition: color 0.2s;
+}
+.auth-resend-btn:hover { color: #289999; }
+.auth-resend-btn:disabled { opacity: 0.5; }
+
+/* ---- Success Page ---- */
+.auth-success-icon {
+  width: 80px;
+  height: 80px;
+  background: #ecfdf5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 32px auto 24px;
+}
+
+/* Spinner */
+.auth-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255,255,255,0.4);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: auth-spin 0.7s linear infinite;
+}
+@keyframes auth-spin { to { transform: rotate(360deg); } }

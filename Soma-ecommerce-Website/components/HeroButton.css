@@ -1,0 +1,49 @@
+.sparkle-btn {
+  border: none;
+  width: 12em;
+  height: 3.5em;
+  border-radius: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background: #1C1A1C;
+  cursor: pointer;
+  transition: all 450ms ease-in-out;
+  text-decoration: none; /* In case it wraps a link */
+}
+
+body.light-theme .sparkle-btn {
+  background: #2a2a2a; /* Slightly lighter for light mode but maintains dark button aesthetic */
+}
+
+.sparkle {
+  fill: #AAAAAA;
+  transition: all 800ms ease;
+}
+
+.sparkle-text {
+  font-weight: 600;
+  color: #AAAAAA;
+  font-size: medium;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.sparkle-btn:hover {
+  background: linear-gradient(0deg, #A47CF3, #683FEA);
+  box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.4),
+    inset 0px -4px 0px 0px rgba(0, 0, 0, 0.2),
+    0px 0px 0px 4px rgba(255, 255, 255, 0.2),
+    0px 0px 180px 0px #9917FF;
+  transform: translateY(-2px);
+}
+
+.sparkle-btn:hover .sparkle-text {
+  color: white;
+}
+
+.sparkle-btn:hover .sparkle {
+  fill: white;
+  transform: scale(1.2);
+}

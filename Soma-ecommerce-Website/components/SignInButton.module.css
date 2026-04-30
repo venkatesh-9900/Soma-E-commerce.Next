@@ -1,0 +1,125 @@
+/* ==========================================
+   SignInButton.module.css
+   Handles both signed-out and signed-in states
+   ========================================== */
+
+/* ---- Signed-out: animated arrow button ---- */
+.button {
+  --primary-color: #645bff;
+  --secondary-color: #fff;
+  --hover-color: #111;
+  --arrow-width: 10px;
+  --arrow-stroke: 2px;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 20px;
+  color: var(--secondary-color);
+  padding: 0.75em 1.6em;
+  background: var(--primary-color);
+  display: flex;
+  transition: 0.2s background;
+  align-items: center;
+  gap: 0.6em;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.arrowWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrow {
+  margin-top: 1px;
+  width: var(--arrow-width);
+  background: var(--primary-color);
+  height: var(--arrow-stroke);
+  position: relative;
+  transition: 0.2s;
+}
+
+.arrow::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  border: solid var(--secondary-color);
+  border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+  display: inline-block;
+  top: -3px;
+  right: 3px;
+  transition: 0.2s;
+  padding: 3px;
+  transform: rotate(-45deg);
+}
+
+.button:hover {
+  background-color: var(--hover-color);
+}
+
+.button:hover .arrow {
+  background: var(--secondary-color);
+}
+
+.button:hover .arrow:before {
+  right: 0;
+}
+
+/* ---- Signed-in: user row ---- */
+.userRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #645bff, #a78bfa);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  cursor: default;
+  box-shadow: 0 2px 8px rgba(100, 91, 255, 0.35);
+}
+
+.signOutBtn {
+  background: transparent;
+  border: 1px solid rgba(100, 91, 255, 0.4);
+  border-radius: 16px;
+  color: #645bff;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 14px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.signOutBtn:hover {
+  background: #645bff;
+  color: #fff;
+  border-color: #645bff;
+}
+
+/* ---- Loading skeleton ---- */
+.skeleton {
+  width: 100px;
+  height: 36px;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #e5e7eb 25%, #f3f4f6 50%, #e5e7eb 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.2s infinite linear;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
